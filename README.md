@@ -19,13 +19,13 @@ Launch and stop programs with OpenVR / SteamVR.
 
 ## Installation
 
-You may need to install the .NET Runtime 4.8 to run this program.
+You may need to install the [.NET 5.0 RUntime](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) to run this program.
 
 Download the latest setup from the [Releases](https://github.com/dreiekk/OpenVR-Autostarter/releases/latest) page.
 
 ### Build it yourself from souce
 
-This project is built in .NET 4.8 and Visual Studio 2019.
+This project is built in .NET 5.0 and Visual Studio 2019.
 
 Clone this git repository
 ```bash
