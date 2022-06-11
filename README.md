@@ -34,6 +34,12 @@ Clone this git repository
 and open the solution `OpenVR-Autostarter.sln` in Visual Studio 2019.
 
 The installer is generated with and [InnoSetup](https://github.com/jrsoftware/issrc) and the related `OpenVR-Autostarter.iss` script.
+
+## How to contribute
+
+Coming soon...
+
+
 ## FAQ
 
 #### How does the autostart work?
