@@ -1,0 +1,17 @@
+{
+	"source" : "builtin",
+	"applications": [
+		{
+			"app_key": "dreiekk.OpenVR-Autostarter",
+			"launch_type": "binary",
+			"binary_path_windows": "OpenVR-Autostarter.exe",
+			"is_dashboard_overlay": true,
+			"strings": {
+				"en_us": {
+					"name": "OpenVR-Autostarter",
+					"description": "Start and stop applications with your openvr runtime"
+				}
+			}
+		}
+	]
+}
