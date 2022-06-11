@@ -29,6 +29,7 @@ namespace OpenVR_Autostarter
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskProgressForm));
             this.labelInfoText = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
@@ -63,6 +64,7 @@ namespace OpenVR_Autostarter
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelInfoText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TaskProgressForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenVR-Autostarter";

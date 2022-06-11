@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseProcessNameForm));
             this.listViewProcesses = new System.Windows.Forms.ListView();
             this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -38,13 +39,14 @@
             // 
             // listViewProcesses
             // 
-            this.listViewProcesses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.listViewProcesses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewProcesses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName});
             this.listViewProcesses.FullRowSelect = true;
             this.listViewProcesses.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewProcesses.HideSelection = false;
             this.listViewProcesses.Location = new System.Drawing.Point(12, 12);
             this.listViewProcesses.MultiSelect = false;
             this.listViewProcesses.Name = "listViewProcesses";
@@ -114,6 +116,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.listViewProcesses);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChooseProcessNameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Choose Process Name";
