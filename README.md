@@ -9,7 +9,7 @@ Launch and stop programs with OpenVR / SteamVR.
 
 ## Features
 
-- Configure settings via the simple UI
+- Configure settings via the UI
 - Autostarter starts/stops itself with your OpenVR runtime; no background task running, when you're not in VR
 - Choose to close programs gracefully or force-kill the process
 - Optionally specify start arguments for each program
@@ -19,21 +19,21 @@ Launch and stop programs with OpenVR / SteamVR.
 
 ## Installation
 
-You may need to install the [.NET 5.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) to run this program.
+You may need to install the [.NET 6.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) to run this program.
 
 Download the latest setup from the [Releases](https://github.com/dreiekk/OpenVR-Autostarter/releases/latest) page.
 
 ### Build it yourself from souce
 
-This project is built in .NET 5.0 and Visual Studio 2019.
+This project is built in .NET 6.0 and Visual Studio 2022.
 
 Clone this git repository
 ```bash
   git clone https://github.com/dreiekk/OpenVR-Autostarter
 ```
-and open the solution `OpenVR-Autostarter.sln` in Visual Studio 2019.
+and open the solution `OpenVR-Autostarter.sln` in Visual Studio 2022.
 
-The installer is generated with and [InnoSetup](https://github.com/jrsoftware/issrc) and the related `OpenVR-Autostarter.iss` script.
+The installer is generated with [InnoSetup](https://github.com/jrsoftware/issrc) and the related `OpenVR-Autostarter.iss` script.
 
 ## How to contribute
 
