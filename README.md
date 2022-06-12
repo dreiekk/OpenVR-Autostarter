@@ -19,7 +19,7 @@ Launch and stop programs with OpenVR / SteamVR.
 
 ## Installation
 
-You may need to install the [.NET 5.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) to run this program.
+You may need to install the [.NET 5.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) to run this program.
 
 Download the latest setup from the [Releases](https://github.com/dreiekk/OpenVR-Autostarter/releases/latest) page.
 
