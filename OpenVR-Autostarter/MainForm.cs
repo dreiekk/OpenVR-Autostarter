@@ -332,7 +332,8 @@ namespace OpenVR_Autostarter
                         Arguments = task.ProgramArguments,
                         UseShellExecute = true
                     };
-                    if (task.StartMinimized) {
+                    if (task.StartMinimized)
+                    {
                         psi.WindowStyle = ProcessWindowStyle.Minimized;
                     }
                     Process.Start(psi);
