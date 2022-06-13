@@ -296,7 +296,7 @@
             this.groupBox2.Size = new System.Drawing.Size(484, 57);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Program Path / URI / Shell Command";
+            this.groupBox2.Text = "Program Path / URI";
             // 
             // groupBox3
             // 
