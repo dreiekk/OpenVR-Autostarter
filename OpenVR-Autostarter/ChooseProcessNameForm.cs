@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace OpenVR_Autostarter
 {
-    public partial class ChooseProcessNameForm : Form
+    public partial class ChooseProcessNameForm : FormEscapeClosable
     {
         public ChooseProcessNameForm()
         {
