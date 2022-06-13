@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace OpenVR_Autostarter
 {
-    public partial class EditTaskForm : Form
+    public partial class EditTaskForm : FormEscapeClosable
     {
         private AutostartTask task = new AutostartTask();
         private bool cancelClicked = false;

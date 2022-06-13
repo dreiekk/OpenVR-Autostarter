@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +15,7 @@ using System.IO;
 
 namespace OpenVR_Autostarter
 {
-    public partial class MainForm : Form
+    public partial class MainForm : FormEscapeClosable
     {
         const string application_key = "dreiekk.OpenVR-Autostarter";
 
