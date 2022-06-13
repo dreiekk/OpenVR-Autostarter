@@ -186,44 +186,6 @@ namespace OpenVR_Autostarter
             return Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "manifest.vrmanifest"));
         }
 
-        //private void buttonRegisterManifest_Click(object sender, EventArgs e)
-        //{
-        //    EVRInitError peError = EVRInitError.None;
-        //    CVRSystem cvr = OpenVR.Init(ref peError, EVRApplicationType.VRApplication_Background);
-
-        //    if (peError != EVRInitError.None)
-        //    {
-        //        MessageBox.Show("Could not initialize OpenVR runtime." + Environment.NewLine + "Please start your VR application." + Environment.NewLine + Environment.NewLine + "Error: " + peError.ToString(), "No OpenVR running", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        return;
-        //    }
-        //}
-
-        //private void buttonCheckManifest_Click(object sender, EventArgs e)
-        //{
-        //    string statustext = $"ID: {application_key}" + Environment.NewLine;
-
-        //    string application_exists = "NO (ERROR)";
-        //    try
-        //    {
-        //        application_exists = OpenVR.Applications.IsApplicationInstalled(application_key) == true ? "YES" : "NO";
-        //    }
-        //    catch (NullReferenceException ex) { }
-        //    statustext += $"Application exists in VR runtime? : {application_exists}" + Environment.NewLine;
-
-        //    string application_autolaunch = "NO (ERROR)";
-        //    try
-        //    {
-        //        application_autolaunch = OpenVR.Applications.GetApplicationAutoLaunch(application_key) == true ? "YES" : "NO";
-        //    }
-        //    catch (NullReferenceException ex) { }
-        //    statustext += $"Autolaunch enabled? : {application_autolaunch}" + Environment.NewLine + Environment.NewLine;
-
-        //    string manifest_path = getManifestPath();
-        //    statustext += "Manifest path:" + Environment.NewLine + Environment.NewLine + manifest_path;
-
-        //    MessageBox.Show(statustext, "vrmanifest status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //}
-
         private async void TimerOpenVRPolling_Tick(object sender, EventArgs e)
         {
             EVRInitError peError = EVRInitError.None;
@@ -231,7 +193,6 @@ namespace OpenVR_Autostarter
 
             if (peError != EVRInitError.None)
             {
-                //MessageBox.Show("Could not initialize OpenVR runtime." + Environment.NewLine + "Please start your VR application." + Environment.NewLine + Environment.NewLine + "Error: " + peError.ToString(), "No OpenVR running", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 openvr_active = false;
                 timerOpenVRPolling.Interval = 5000;
 
@@ -251,10 +212,7 @@ namespace OpenVR_Autostarter
                 // disable until first startup is through...
                 timerOpenVRPolling.Enabled = false;
 
-                // register vrmanifest
                 RegisterVRManifest();
-
-                // first startup, start programs
                 await StartPrograms();
 
                 // first startup ends, enabling timer again
