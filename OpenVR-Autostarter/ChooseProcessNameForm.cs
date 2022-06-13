@@ -18,28 +18,28 @@ namespace OpenVR_Autostarter
             InitializeComponent();
         }
 
-        private void listViewProcesses_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListViewProcesses_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonSelect.Enabled = true;
         }
 
-        public string getSelectedProcessName()
+        public string GetSelectedProcessName()
         {
             return listViewProcesses.SelectedItems[0].Text;
         }
 
         private void ChooseProcessNameForm_Load(object sender, EventArgs e)
         {
-            refreshProcessList();
+            RefreshProcessList();
         }
 
-        private async void refreshProcessList()
+        private async void RefreshProcessList()
         {
             buttonSelect.Enabled = false;
             progressBar.Visible = true;
             buttonRefresh.Enabled = false;
             listViewProcesses.Items.Clear();
-            List<string> processNames = await Task.Run(() => getProcessList());
+            List<string> processNames = await Task.Run(() => GetProcessList());
             foreach (string processName in processNames)
             {
                 listViewProcesses.Items.Add(processName);
@@ -48,7 +48,7 @@ namespace OpenVR_Autostarter
             buttonRefresh.Enabled = true;
         }
 
-        private List<string> getProcessList()
+        private static List<string> GetProcessList()
         {
             Process[] runningProcesses = Process.GetProcesses();
             List<string> processNames = new List<string>();
@@ -69,14 +69,14 @@ namespace OpenVR_Autostarter
             return processNames;
         }
 
-        private void listViewProcesses_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ListViewProcesses_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             buttonSelect.PerformClick();
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
+        private void ButtonRefresh_Click(object sender, EventArgs e)
         {
-            refreshProcessList();
+            RefreshProcessList();
         }
     }
 }

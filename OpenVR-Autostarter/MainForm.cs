@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,9 +53,11 @@ namespace OpenVR_Autostarter
 
             foreach (AutostartTask task in config.Tasks)
             {
-                ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Name = task.UUID;
-                listViewItem.Text = task.Enabled ? "YES" : "NO";
+                ListViewItem listViewItem = new ListViewItem()
+                {
+                    Name = task.UUID,
+                    Text = task.Enabled ? "YES" : "NO"
+                };
                 listViewItem.SubItems.Add(task.Name);
                 listViewItem.SubItems.Add(task.StartAction.ToString());
                 listViewItem.SubItems.Add(task.StopAction.ToString());
@@ -66,7 +68,7 @@ namespace OpenVR_Autostarter
             }
         }
 
-        private string GetConfigurationPath()
+        private static string GetConfigurationPath()
         {
             return Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
@@ -103,20 +105,20 @@ namespace OpenVR_Autostarter
             XmlHelper.ToXmlFile(config, configFilePath);
         }
 
-        private void buttonNew_Click(object sender, EventArgs e)
+        private void ButtonNew_Click(object sender, EventArgs e)
         {
-            openEditTaskDialog(null);
+            OpenEditTaskDialog(null);
         }
 
-        private void listViewTasks_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ListViewTasks_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (listViewTasks.SelectedItems.Count != 1) return;
-            openEditTaskDialog(listViewTasks.SelectedItems[0].Name);
+            OpenEditTaskDialog(listViewTasks.SelectedItems[0].Name);
         }
 
-        private Tuple<AutostartTask, int> findTaskInConfigByUUID(string uuid)
+        private Tuple<AutostartTask?, int> FindTaskInConfigByUUID(string uuid)
         {
-            AutostartTask task = null;
+            AutostartTask? task = null;
             int taskIndex = -1;
             foreach (AutostartTask searchtask in config.Tasks)
             {
@@ -130,14 +132,13 @@ namespace OpenVR_Autostarter
             return Tuple.Create(task, taskIndex);
         }
 
-        private void openEditTaskDialog(string uuid)
+        private void OpenEditTaskDialog(string? uuid)
         {
-            bool isNewTask = uuid == null;
-            AutostartTask task = null;
+            AutostartTask? task = null;
             int taskIndex = -1;
-            if (isNewTask == false)
+            if (uuid != null)
             {
-                (task, taskIndex) = findTaskInConfigByUUID(uuid);
+                (task, taskIndex) = FindTaskInConfigByUUID(uuid);
                 if (task == null)
                 {
                     MessageBox.Show("The task you want to edit could not be found.", "Could not find task", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -154,9 +155,9 @@ namespace OpenVR_Autostarter
             }
             else if (dr == DialogResult.OK)
             {
-                AutostartTask taskToSave = editTaskForm.getTaskFromInputs();
+                AutostartTask taskToSave = editTaskForm.GetTaskFromInputs();
 
-                if (isNewTask)
+                if (uuid == null)
                 {
                     config.Tasks.Add(taskToSave);
                 }
@@ -170,20 +171,25 @@ namespace OpenVR_Autostarter
             }
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
             if (listViewTasks.SelectedItems.Count != 1) return;
-            openEditTaskDialog(listViewTasks.SelectedItems[0].Name);
+            OpenEditTaskDialog(listViewTasks.SelectedItems[0].Name);
         }
 
-        private void linkLabelGitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabelGitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://github.com/dreiekk/OpenVR-Autostarter") { UseShellExecute = true });
         }
 
-        private string getManifestPath()
+        private static string GetManifestPath()
         {
-            return Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "manifest.vrmanifest"));
+            string? executablePath = Path.GetDirectoryName(Application.ExecutablePath);
+            if (executablePath == null)
+            {
+                throw new Exception("Could not get Application Executable Path");
+            }
+            return Path.GetFullPath(Path.Combine(executablePath, "manifest.vrmanifest"));
         }
 
         private async void TimerOpenVRPolling_Tick(object sender, EventArgs e)
@@ -209,13 +215,10 @@ namespace OpenVR_Autostarter
             {
                 openvr_active = true;
 
-                // disable until first startup is through...
+                // first startup
                 timerOpenVRPolling.Enabled = false;
-
                 RegisterVRManifest();
                 await StartPrograms();
-
-                // first startup ends, enabling timer again
                 timerOpenVRPolling.Enabled = true;
             }
 
@@ -245,7 +248,7 @@ namespace OpenVR_Autostarter
             }
         }
 
-        private void RegisterVRManifest()
+        private static void RegisterVRManifest()
         {
             try
             {
@@ -256,7 +259,7 @@ namespace OpenVR_Autostarter
             }
             catch { }
 
-            string manifest_path = getManifestPath();
+            string manifest_path = GetManifestPath();
             Debug.WriteLine(manifest_path);
             Debug.WriteLine("Is Application installed? : " + OpenVR.Applications.IsApplicationInstalled(application_key));
             Debug.WriteLine("Installing manifest...");
@@ -299,15 +302,15 @@ namespace OpenVR_Autostarter
                 string action = task.StartAction == StartStopAction.START_PROGRAM ? "Starting" : "Closing";
 
                 index++;
-                tpf.setInfoText($"{action} {task.Name} ({index}/{total})...");
+                tpf.SetInfoText($"{action} {task.Name} ({index}/{total})...");
 
                 if (task.StartAction == StartStopAction.START_PROGRAM)
                 {
-                    await startProcess(tpf, task);
+                    await StartProcess(tpf, task);
                 }
                 else
                 {
-                    await stopProcess(tpf, task);
+                    await StopProcess(tpf, task);
                 }
                 
                 await Task.Run(() => { Thread.Sleep(1000); });
@@ -316,16 +319,18 @@ namespace OpenVR_Autostarter
             tpf.Close();
         }
 
-        private async Task startProcess(TaskProgressForm tpf, AutostartTask task)
+        private static async Task StartProcess(TaskProgressForm tpf, AutostartTask task)
         {
-            Func<string> temp = () =>
+            string temp()
             {
                 try
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo();
-                    psi.FileName = task.ProgramPath;
-                    psi.WorkingDirectory = Path.GetDirectoryName(task.ProgramPath);
-                    psi.Arguments = task.ProgramArguments;
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = task.ProgramPath,
+                        WorkingDirectory = Path.GetDirectoryName(task.ProgramPath),
+                        Arguments = task.ProgramArguments
+                    };
                     Process.Start(psi);
                     return "";
                 }
@@ -333,17 +338,17 @@ namespace OpenVR_Autostarter
                 {
                     return ex.Message;
                 }
-            };
+            }
             string result = await Task.Run(temp);
 
             if (result != "")
             {
-                tpf.setInfoText($"Error starting {task.Name}, skipping...");
+                tpf.SetInfoText($"Error starting {task.Name}, skipping...");
                 await Task.Run(() => { Thread.Sleep(2000); });
             }
         }
 
-        private async Task stopProcess(TaskProgressForm tpf, AutostartTask task)
+        private static async Task StopProcess(TaskProgressForm tpf, AutostartTask task)
         {
             Process[] runningProcesses = await Task.Run(() => { return Process.GetProcesses(); });
 
@@ -370,7 +375,7 @@ namespace OpenVR_Autostarter
 
             if (targetProcesses.Count <= 0)
             {
-                tpf.setInfoText($"{task.Name} is not running, skipping to next task...");
+                tpf.SetInfoText($"{task.Name} is not running, skipping to next task...");
                 await Task.Run(() => { Thread.Sleep(2000); });
             }
             else
@@ -408,15 +413,15 @@ namespace OpenVR_Autostarter
                 string action = task.StopAction == StartStopAction.START_PROGRAM ? "Starting" : "Closing";
 
                 index++;
-                tpf.setInfoText($"{action} {task.Name} ({index}/{total})...");
+                tpf.SetInfoText($"{action} {task.Name} ({index}/{total})...");
 
                 if (task.StopAction == StartStopAction.START_PROGRAM)
                 {
-                    await startProcess(tpf, task);
+                    await StartProcess(tpf, task);
                 }
                 else
                 {
-                    await stopProcess(tpf, task);
+                    await StopProcess(tpf, task);
                 }
 
                 await Task.Run(() => { Thread.Sleep(1000); });
@@ -457,11 +462,11 @@ namespace OpenVR_Autostarter
             ShowTracked();
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
             if (listViewTasks.SelectedItems.Count != 1) return;
             string uuid = listViewTasks.SelectedItems[0].Name;
-            (AutostartTask task, int taskIndex) = findTaskInConfigByUUID(uuid);
+            (AutostartTask? task, int taskIndex) = FindTaskInConfigByUUID(uuid);
             if (task == null)
             {
                 MessageBox.Show("The task you want to delete could not be found.", "Could not find task", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -472,11 +477,11 @@ namespace OpenVR_Autostarter
             RefreshTaskListView();
         }
 
-        private void buttonMoveUp_Click(object sender, EventArgs e)
+        private void ButtonMoveUp_Click(object sender, EventArgs e)
         {
             if (listViewTasks.SelectedItems.Count != 1) return;
             string uuid = listViewTasks.SelectedItems[0].Name;
-            (AutostartTask task, int taskIndex) = findTaskInConfigByUUID(uuid);
+            (AutostartTask? task, int taskIndex) = FindTaskInConfigByUUID(uuid);
             if (task == null)
             {
                 MessageBox.Show("The task you want to move could not be found.", "Could not find task", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -498,11 +503,11 @@ namespace OpenVR_Autostarter
             RefreshTaskListView();
         }
 
-        private void buttonMoveDown_Click(object sender, EventArgs e)
+        private void ButtonMoveDown_Click(object sender, EventArgs e)
         {
             if (listViewTasks.SelectedItems.Count != 1) return;
             string uuid = listViewTasks.SelectedItems[0].Name;
-            (AutostartTask task, int taskIndex) = findTaskInConfigByUUID(uuid);
+            (AutostartTask? task, int taskIndex) = FindTaskInConfigByUUID(uuid);
             if (task == null)
             {
                 MessageBox.Show("The task you want to move could not be found.", "Could not find task", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -524,12 +529,12 @@ namespace OpenVR_Autostarter
             RefreshTaskListView();
         }
 
-        private async void buttonTestStart_Click(object sender, EventArgs e)
+        private async void ButtonTestStart_Click(object sender, EventArgs e)
         {
             await StartPrograms();
         }
 
-        private async void buttonTestStop_Click(object sender, EventArgs e)
+        private async void ButtonTestStop_Click(object sender, EventArgs e)
         {
             await StopPrograms();
         }

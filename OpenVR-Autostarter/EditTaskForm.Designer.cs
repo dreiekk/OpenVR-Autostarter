@@ -88,7 +88,7 @@
             this.buttonChooseProgram.TabIndex = 7;
             this.buttonChooseProgram.Text = "choose file";
             this.buttonChooseProgram.UseVisualStyleBackColor = true;
-            this.buttonChooseProgram.Click += new System.EventHandler(this.buttonChooseProgram_Click);
+            this.buttonChooseProgram.Click += new System.EventHandler(this.ButtonChooseProgram_Click);
             // 
             // buttonSave
             // 
@@ -110,7 +110,7 @@
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // radioButtonStart_Nothing
             // 
@@ -211,7 +211,7 @@
             this.checkBoxCloseByProcessName.TabIndex = 25;
             this.checkBoxCloseByProcessName.Text = "close program by ProcessName instead of Process Path (recommended)";
             this.checkBoxCloseByProcessName.UseVisualStyleBackColor = true;
-            this.checkBoxCloseByProcessName.CheckedChanged += new System.EventHandler(this.checkBoxCloseByProcessName_CheckedChanged);
+            this.checkBoxCloseByProcessName.CheckedChanged += new System.EventHandler(this.CheckBoxCloseByProcessName_CheckedChanged);
             // 
             // textBoxProcessName
             // 
@@ -237,7 +237,7 @@
             this.buttonChooseProcessName.TabIndex = 26;
             this.buttonChooseProcessName.Text = "choose process";
             this.buttonChooseProcessName.UseVisualStyleBackColor = true;
-            this.buttonChooseProcessName.Click += new System.EventHandler(this.buttonChooseProcessName_Click);
+            this.buttonChooseProcessName.Click += new System.EventHandler(this.ButtonChooseProcessName_Click);
             // 
             // groupBoxOptions
             // 

@@ -17,7 +17,7 @@ namespace OpenVR_Autostarter
             InitializeComponent();
         }
 
-        public void setInfoText(string text)
+        public void SetInfoText(string text)
         {
             labelInfoText.Text = text;
         }
