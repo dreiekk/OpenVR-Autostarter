@@ -102,6 +102,7 @@ namespace OpenVR_Autostarter
             checkBoxCloseByProcessName.Checked = task.CloseByProcessName;
             textBoxProcessName.Text = task.ProcessName;
             checkBoxForceClose.Checked = task.ForceKillAfterTime;
+            checkBoxStartMinimized.Checked = task.StartMinimized;
         }
 
         public AutostartTask GetTaskFromInputs()
@@ -122,6 +123,7 @@ namespace OpenVR_Autostarter
             task.CloseByProcessName = checkBoxCloseByProcessName.Checked;
             task.ProcessName = textBoxProcessName.Text.Trim();
             task.ForceKillAfterTime = checkBoxForceClose.Checked;
+            task.StartMinimized = checkBoxStartMinimized.Checked;
             return task;
         }
 

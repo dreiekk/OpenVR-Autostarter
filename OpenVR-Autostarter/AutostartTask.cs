@@ -16,7 +16,7 @@ namespace OpenVR_Autostarter
         public StartStopAction StopAction { get; set; } = StartStopAction.STOP_PROGRAM;
         public string ProgramPath { get; set; } = "";
         public string ProgramArguments { get; set; } = "";
-        public bool StartHidden { get; set; } = false;
+        public bool StartMinimized { get; set; } = false;
         public bool CloseByProcessName { get; set; } = false;
         public string ProcessName { get; set; } = "";
         public bool ForceKillAfterTime { get; set; } = false;
