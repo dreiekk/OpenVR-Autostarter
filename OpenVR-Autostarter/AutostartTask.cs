@@ -11,6 +11,7 @@ namespace OpenVR_Autostarter
     {
         public string UUID { get; set; }
         public bool Enabled { get; set; } = true;
+        public bool StartHidden { get; set; } = false;
         public string Name { get; set; }
         public StartStopAction StartAction { get; set; }
         public StartStopAction StopAction { get; set; }

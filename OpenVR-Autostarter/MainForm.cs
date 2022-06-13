@@ -376,6 +376,9 @@ namespace OpenVR_Autostarter
                     psi.FileName = task.ProgramPath;
                     psi.WorkingDirectory = Path.GetDirectoryName(task.ProgramPath);
                     psi.Arguments = task.ProgramArguments;
+                    if (task.StartHidden) {
+                        psi.WindowStyle = ProcessWindowStyle.Minimized;
+                    }
                     Process.Start(psi);
                     return "";
                 }
