@@ -84,7 +84,7 @@ namespace OpenVR_Autostarter
                 {
                     config = XmlHelper.FromXmlFile<AutostarterConfig>(configFilePath);
                 }
-                catch (Exception ex)
+                catch
                 {
                     MessageBox.Show("Fatal error: Could not load config file at:" + Environment.NewLine + Environment.NewLine + configFilePath + Environment.NewLine + Environment.NewLine + "Closing application to prevent override.", "Could not load config", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     readyToDie = true;
@@ -296,10 +296,7 @@ namespace OpenVR_Autostarter
                     return;
                 }
             }
-            catch (Exception ex)
-            {
-                //
-            }
+            catch { }
 
             string manifest_path = getManifestPath();
             Debug.WriteLine(manifest_path);
@@ -408,10 +405,7 @@ namespace OpenVR_Autostarter
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-
-                    }
+                    catch { }
                 }
                 return returnProcesses;
             });
