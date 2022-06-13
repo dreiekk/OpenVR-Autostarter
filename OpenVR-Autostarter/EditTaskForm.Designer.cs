@@ -48,6 +48,7 @@
             this.textBoxStartArguments = new System.Windows.Forms.TextBox();
             this.buttonChooseProcessName = new System.Windows.Forms.Button();
             this.groupBoxOptions = new System.Windows.Forms.GroupBox();
+            this.checkBoxStartMinimized = new System.Windows.Forms.CheckBox();
             this.labelStartArguments = new System.Windows.Forms.Label();
             this.labelUUID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -94,7 +95,7 @@
             // 
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonSave.Location = new System.Drawing.Point(340, 441);
+            this.buttonSave.Location = new System.Drawing.Point(340, 461);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 10;
@@ -104,7 +105,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.Location = new System.Drawing.Point(421, 441);
+            this.buttonCancel.Location = new System.Drawing.Point(421, 461);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 11;
@@ -241,6 +242,8 @@
             // 
             // groupBoxOptions
             // 
+            this.groupBoxOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.groupBoxOptions.Controls.Add(this.checkBoxStartMinimized);
             this.groupBoxOptions.Controls.Add(this.labelStartArguments);
             this.groupBoxOptions.Controls.Add(this.textBoxStartArguments);
             this.groupBoxOptions.Controls.Add(this.textBoxProcessName);
@@ -249,10 +252,20 @@
             this.groupBoxOptions.Controls.Add(this.buttonChooseProcessName);
             this.groupBoxOptions.Location = new System.Drawing.Point(12, 244);
             this.groupBoxOptions.Name = "groupBoxOptions";
-            this.groupBoxOptions.Size = new System.Drawing.Size(484, 189);
+            this.groupBoxOptions.Size = new System.Drawing.Size(484, 211);
             this.groupBoxOptions.TabIndex = 32;
             this.groupBoxOptions.TabStop = false;
             this.groupBoxOptions.Text = "Options";
+            // 
+            // checkBoxStartMinimized
+            // 
+            this.checkBoxStartMinimized.AutoSize = true;
+            this.checkBoxStartMinimized.Location = new System.Drawing.Point(13, 184);
+            this.checkBoxStartMinimized.Name = "checkBoxStartMinimized";
+            this.checkBoxStartMinimized.Size = new System.Drawing.Size(157, 19);
+            this.checkBoxStartMinimized.TabIndex = 30;
+            this.checkBoxStartMinimized.Text = "start program minimized";
+            this.checkBoxStartMinimized.UseVisualStyleBackColor = true;
             // 
             // labelStartArguments
             // 
@@ -267,7 +280,7 @@
             // 
             this.labelUUID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelUUID.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelUUID.Location = new System.Drawing.Point(12, 441);
+            this.labelUUID.Location = new System.Drawing.Point(12, 461);
             this.labelUUID.Name = "labelUUID";
             this.labelUUID.Size = new System.Drawing.Size(322, 23);
             this.labelUUID.TabIndex = 33;
@@ -283,7 +296,7 @@
             this.groupBox2.Size = new System.Drawing.Size(484, 57);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Program Path";
+            this.groupBox2.Text = "Program Path / URI / Shell Command";
             // 
             // groupBox3
             // 
@@ -319,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 472);
+            this.ClientSize = new System.Drawing.Size(508, 492);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.labelUUID);
@@ -374,5 +387,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.CheckBox checkBoxEnabled;
+        private CheckBox checkBoxStartMinimized;
     }
 }
