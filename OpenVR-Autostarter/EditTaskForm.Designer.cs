@@ -334,7 +334,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Task";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditTaskForm_FormClosing);
-            this.Load += new System.EventHandler(this.EditTaskForm_Load);
             this.groupBoxStart.ResumeLayout(false);
             this.groupBoxStart.PerformLayout();
             this.groupBox1.ResumeLayout(false);
