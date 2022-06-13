@@ -67,7 +67,6 @@
             this.columnHeaderPath,
             this.columnHeaderStartArguments});
             this.listViewTasks.FullRowSelect = true;
-            this.listViewTasks.HideSelection = false;
             this.listViewTasks.Location = new System.Drawing.Point(12, 12);
             this.listViewTasks.MultiSelect = false;
             this.listViewTasks.Name = "listViewTasks";
@@ -75,7 +74,7 @@
             this.listViewTasks.TabIndex = 0;
             this.listViewTasks.UseCompatibleStateImageBehavior = false;
             this.listViewTasks.View = System.Windows.Forms.View.Details;
-            this.listViewTasks.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewTasks_MouseDoubleClick);
+            this.listViewTasks.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListViewTasks_MouseDoubleClick);
             // 
             // columnHeaderEnabled
             // 
@@ -117,7 +116,7 @@
             this.linkLabelGitHub.TabStop = true;
             this.linkLabelGitHub.Text = "View on GitHub";
             this.linkLabelGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.linkLabelGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGitHub_LinkClicked);
+            this.linkLabelGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelGitHub_LinkClicked);
             // 
             // labelVersion
             // 
@@ -138,7 +137,7 @@
             this.buttonEdit.TabIndex = 3;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -149,7 +148,7 @@
             this.buttonDelete.TabIndex = 4;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // buttonNew
             // 
@@ -160,7 +159,7 @@
             this.buttonNew.TabIndex = 5;
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            this.buttonNew.Click += new System.EventHandler(this.ButtonNew_Click);
             // 
             // notifyIcon
             // 
@@ -201,7 +200,7 @@
             this.buttonMoveUp.TabIndex = 8;
             this.buttonMoveUp.Text = "Move up";
             this.buttonMoveUp.UseVisualStyleBackColor = true;
-            this.buttonMoveUp.Click += new System.EventHandler(this.buttonMoveUp_Click);
+            this.buttonMoveUp.Click += new System.EventHandler(this.ButtonMoveUp_Click);
             // 
             // buttonMoveDown
             // 
@@ -212,7 +211,7 @@
             this.buttonMoveDown.TabIndex = 9;
             this.buttonMoveDown.Text = "Move down";
             this.buttonMoveDown.UseVisualStyleBackColor = true;
-            this.buttonMoveDown.Click += new System.EventHandler(this.buttonMoveDown_Click);
+            this.buttonMoveDown.Click += new System.EventHandler(this.ButtonMoveDown_Click);
             // 
             // timerOpenVRPolling
             // 
@@ -228,7 +227,7 @@
             this.buttonTestStart.TabIndex = 10;
             this.buttonTestStart.Text = "Simulate VR Startup";
             this.buttonTestStart.UseVisualStyleBackColor = true;
-            this.buttonTestStart.Click += new System.EventHandler(this.buttonTestStart_Click);
+            this.buttonTestStart.Click += new System.EventHandler(this.ButtonTestStart_Click);
             // 
             // buttonTestStop
             // 
@@ -239,7 +238,7 @@
             this.buttonTestStop.TabIndex = 11;
             this.buttonTestStop.Text = "Simulate VR Shutdown";
             this.buttonTestStop.UseVisualStyleBackColor = true;
-            this.buttonTestStop.Click += new System.EventHandler(this.buttonTestStop_Click);
+            this.buttonTestStop.Click += new System.EventHandler(this.ButtonTestStop_Click);
             // 
             // MainForm
             // 
@@ -263,7 +262,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenVR-Autostarter Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.contextMenuStripTray.ResumeLayout(false);
             this.ResumeLayout(false);
 

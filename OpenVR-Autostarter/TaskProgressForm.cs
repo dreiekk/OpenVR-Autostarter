@@ -17,12 +17,7 @@ namespace OpenVR_Autostarter
             InitializeComponent();
         }
 
-        private void TaskProgressForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void setInfoText(string text)
+        public void SetInfoText(string text)
         {
             labelInfoText.Text = text;
         }

@@ -55,8 +55,8 @@
             this.listViewProcesses.TabIndex = 0;
             this.listViewProcesses.UseCompatibleStateImageBehavior = false;
             this.listViewProcesses.View = System.Windows.Forms.View.Details;
-            this.listViewProcesses.SelectedIndexChanged += new System.EventHandler(this.listViewProcesses_SelectedIndexChanged);
-            this.listViewProcesses.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewProcesses_MouseDoubleClick);
+            this.listViewProcesses.SelectedIndexChanged += new System.EventHandler(this.ListViewProcesses_SelectedIndexChanged);
+            this.listViewProcesses.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProcesses_MouseDoubleClick);
             // 
             // columnHeaderName
             // 
@@ -103,7 +103,7 @@
             this.buttonRefresh.TabIndex = 4;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            this.buttonRefresh.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // ChooseProcessNameForm
             // 
