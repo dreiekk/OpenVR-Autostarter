@@ -68,7 +68,6 @@ namespace OpenVR_Autostarter
             this.Name = "TaskProgressForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenVR-Autostarter";
-            this.Load += new System.EventHandler(this.TaskProgressForm_Load);
             this.ResumeLayout(false);
 
         }
