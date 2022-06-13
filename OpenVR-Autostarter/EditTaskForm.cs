@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +15,7 @@ namespace OpenVR_Autostarter
         private AutostartTask task = new AutostartTask();
         private bool cancelClicked = false;
 
-        public EditTaskForm(AutostartTask TaskToLoad = null)
+        public EditTaskForm(AutostartTask? TaskToLoad = null)
         {
             InitializeComponent();
             if (TaskToLoad != null)
@@ -28,7 +28,7 @@ namespace OpenVR_Autostarter
             }
         }
 
-        private void checkBoxCloseByProcessName_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxCloseByProcessName_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxCloseByProcessName.Checked)
             {
@@ -42,7 +42,7 @@ namespace OpenVR_Autostarter
             }
         }
 
-        private void buttonChooseProcessName_Click(object sender, EventArgs e)
+        private void ButtonChooseProcessName_Click(object sender, EventArgs e)
         {
             ChooseProcessNameForm chooseProcessNameForm = new ChooseProcessNameForm();
 
@@ -53,12 +53,12 @@ namespace OpenVR_Autostarter
             }
             else if (dr == DialogResult.OK)
             {
-                textBoxProcessName.Text = chooseProcessNameForm.getSelectedProcessName();
+                textBoxProcessName.Text = chooseProcessNameForm.GetSelectedProcessName();
                 chooseProcessNameForm.Close();
             }
         }
 
-        private void buttonChooseProgram_Click(object sender, EventArgs e)
+        private void ButtonChooseProgram_Click(object sender, EventArgs e)
         {
             DialogResult dr = openFileDialog.ShowDialog(this);
             if (dr == DialogResult.OK)
@@ -104,7 +104,7 @@ namespace OpenVR_Autostarter
             checkBoxForceClose.Checked = task.ForceKillAfterTime;
         }
 
-        public AutostartTask getTaskFromInputs()
+        public AutostartTask GetTaskFromInputs()
         {
             task.Name = textBoxName.Text.Trim();
             task.Enabled = checkBoxEnabled.Checked;
@@ -151,7 +151,7 @@ namespace OpenVR_Autostarter
             }
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             cancelClicked = true;
             Close();

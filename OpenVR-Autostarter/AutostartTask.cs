@@ -11,14 +11,14 @@ namespace OpenVR_Autostarter
     {
         public string UUID { get; set; }
         public bool Enabled { get; set; } = true;
-        public string Name { get; set; }
-        public StartStopAction StartAction { get; set; }
-        public StartStopAction StopAction { get; set; }
-        public string ProgramPath { get; set; }
-        public string ProgramArguments { get; set; }
-        public bool CloseByProcessName { get; set; }
-        public string ProcessName { get; set; }
-        public bool ForceKillAfterTime { get; set; }
+        public string Name { get; set; } = "";
+        public StartStopAction StartAction { get; set; } = StartStopAction.START_PROGRAM;
+        public StartStopAction StopAction { get; set; } = StartStopAction.STOP_PROGRAM;
+        public string ProgramPath { get; set; } = "";
+        public string ProgramArguments { get; set; } = "";
+        public bool CloseByProcessName { get; set; } = false;
+        public string ProcessName { get; set; } = "";
+        public bool ForceKillAfterTime { get; set; } = false;
 
         public AutostartTask()
         {
