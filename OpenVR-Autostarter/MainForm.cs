@@ -47,11 +47,6 @@ namespace OpenVR_Autostarter
             isMainFormShown = true;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            //
-        }
-
         private void RefreshTaskListView()
         {
             listViewTasks.Items.Clear();

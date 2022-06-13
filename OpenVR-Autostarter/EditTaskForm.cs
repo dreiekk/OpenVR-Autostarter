@@ -156,10 +156,5 @@ namespace OpenVR_Autostarter
             cancelClicked = true;
             Close();
         }
-
-        private void EditTaskForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace OpenVR_Autostarter
+namespace OpenVR_Autostarter
 {
     partial class MainForm
     {
@@ -263,7 +263,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenVR-Autostarter Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.contextMenuStripTray.ResumeLayout(false);
             this.ResumeLayout(false);
 
