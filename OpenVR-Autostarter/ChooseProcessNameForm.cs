@@ -64,10 +64,7 @@ namespace OpenVR_Autostarter
                         processNames.Add(process.ProcessName);
                     }
                 }
-                catch (Exception ex)
-                {
-
-                }
+                catch { }
             }
             return processNames;
         }
