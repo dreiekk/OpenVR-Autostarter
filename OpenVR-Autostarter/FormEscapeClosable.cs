@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenVR_Autostarter
 {
-    public abstract class FormEscapeClosable : Form
+    public class FormEscapeClosable : Form
     {
         protected override bool ProcessDialogKey(Keys keyData)
         {
