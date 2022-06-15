@@ -355,28 +355,29 @@ namespace OpenVR_Autostarter
 
         private static async Task StopProcess(TaskProgressForm tpf, AutostartTask task)
         {
-            Process[] runningProcesses = await Task.Run(() => { return Process.GetProcesses(); });
-
-            List<Process> targetProcesses = await Task.Run(() =>
+            async Task<List<Process>> GetTargetProcesses()
             {
-                List<Process> returnProcesses = new List<Process>();
-                foreach (Process process in runningProcesses)
+                Process[] runningProcesses = await Task.Run(() => { return Process.GetProcesses(); });
+                return await Task.Run(() =>
                 {
-                    try
+                    List<Process> returnProcesses = new List<Process>();
+                    foreach (Process process in runningProcesses)
                     {
-                        if (process.MainModule != null)
+                        try
                         {
                             if ((task.CloseByProcessName && process.ProcessName == task.ProcessName)
-                                || (task.CloseByProcessName == false && process.MainModule.FileName == task.ProgramPath))
+                                || (task.CloseByProcessName == false && process.MainModule != null && process.MainModule.FileName == task.ProgramPath))
                             {
                                 returnProcesses.Add(process);
                             }
                         }
+                        catch { }
                     }
-                    catch { }
-                }
-                return returnProcesses;
-            });
+                    return returnProcesses;
+                });
+            };
+
+            List<Process> targetProcesses = await GetTargetProcesses();
 
             if (targetProcesses.Count <= 0)
             {
@@ -385,15 +386,26 @@ namespace OpenVR_Autostarter
             }
             else
             {
-                foreach (Process p in targetProcesses)
+                if (task.ForceKillAfterTime)
                 {
-                    if (task.ForceKillAfterTime)
+                    foreach (Process p in targetProcesses)
                     {
                         await Task.Run(() => { p.Kill(); });
                     }
-                    else
+                }
+                else
+                {
+                    for (int i = 0; i < targetProcesses.Count; i++)
                     {
-                        await Task.Run(() => { p.CloseMainWindow(); });
+                        foreach (Process p in targetProcesses)
+                        {
+                            try
+                            {
+                                p.CloseMainWindow();
+                            }
+                            catch { }
+                        }
+                        targetProcesses = await GetTargetProcesses();
                     }
                 }
             }
