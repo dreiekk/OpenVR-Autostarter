@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "OpenVR-Autostarter"
-#define MyAppVersion "0.3.0"
+#define MyAppVersion "0.3.1"
 #define MyAppPublisher "dreiekk"
 #define MyAppURL "https://github.com/dreiekk/OpenVR-Autostarter"
 #define MyAppExeName "OpenVR-Autostarter.exe"
