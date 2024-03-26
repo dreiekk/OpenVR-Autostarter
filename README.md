@@ -23,7 +23,7 @@ You may need to install the [.NET 6.0 Desktop Runtime](https://dotnet.microsoft.
 
 Download the latest setup from the [Releases](https://github.com/dreiekk/OpenVR-Autostarter/releases/latest) page.
 
-### Build it yourself from souce
+### Build it yourself from source
 
 This project is built in .NET 6.0 and Visual Studio 2022.
 
