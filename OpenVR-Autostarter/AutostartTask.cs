@@ -20,6 +20,7 @@ namespace OpenVR_Autostarter
         public bool CloseByProcessName { get; set; } = false;
         public string ProcessName { get; set; } = "";
         public bool ForceKillAfterTime { get; set; } = false;
+        public bool PreventAlreadyRunning { get; set; } = false;
 
         public AutostartTask()
         {

@@ -39,6 +39,7 @@ namespace OpenVR_Autostarter
             {
                 textBoxProcessName.Enabled = false;
                 buttonChooseProcessName.Enabled = false;
+                checkBoxPreventAlreadyRunning.Checked = false;
             }
         }
 
@@ -85,17 +86,17 @@ namespace OpenVR_Autostarter
                     radioButtonStart_Nothing.Checked = true;
                     break;
             }
-            switch(task.StopAction)
+            switch (task.StopAction)
             {
                 case StartStopAction.START_PROGRAM:
                     radioButtonStop_Start.Checked = true;
-                break;
+                    break;
                 case StartStopAction.STOP_PROGRAM:
                     radioButtonStop_Stop.Checked = true;
-                break;
+                    break;
                 default:
                     radioButtonStop_Nothing.Checked = true;
-                break;
+                    break;
             }
             textBoxProgramPath.Text = task.ProgramPath;
             textBoxStartArguments.Text = task.ProgramArguments;
@@ -103,6 +104,7 @@ namespace OpenVR_Autostarter
             textBoxProcessName.Text = task.ProcessName;
             checkBoxForceClose.Checked = task.ForceKillAfterTime;
             checkBoxStartMinimized.Checked = task.StartMinimized;
+            checkBoxPreventAlreadyRunning.Checked = task.PreventAlreadyRunning;
         }
 
         public AutostartTask GetTaskFromInputs()
@@ -124,6 +126,7 @@ namespace OpenVR_Autostarter
             task.ProcessName = textBoxProcessName.Text.Trim();
             task.ForceKillAfterTime = checkBoxForceClose.Checked;
             task.StartMinimized = checkBoxStartMinimized.Checked;
+            task.PreventAlreadyRunning = checkBoxPreventAlreadyRunning.Checked;
             return task;
         }
 
@@ -157,6 +160,14 @@ namespace OpenVR_Autostarter
         {
             cancelClicked = true;
             Close();
+        }
+
+        private void checkBoxPreventAlreadyRunning_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxPreventAlreadyRunning.Checked)
+            {
+                checkBoxCloseByProcessName.Checked = true;
+            }
         }
     }
 }
