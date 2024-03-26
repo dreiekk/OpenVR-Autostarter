@@ -336,6 +336,21 @@ namespace OpenVR_Autostarter
                     {
                         psi.WindowStyle = ProcessWindowStyle.Minimized;
                     }
+                    if (task.PreventAlreadyRunning)
+                    {
+                        Process[] runningProcesses = Process.GetProcesses();
+                        foreach (Process process in runningProcesses)
+                        {
+                            try
+                            {
+                                if (process.ProcessName == task.ProcessName)
+                                {
+                                    return "already_running";
+                                }
+                            }
+                            catch { }
+                        }                            
+                    }
                     Process.Start(psi);
                     return "";
                 }
@@ -346,7 +361,11 @@ namespace OpenVR_Autostarter
             }
             string result = await Task.Run(temp);
 
-            if (result != "")
+            if (result == "already_running")
+            {
+                tpf.SetInfoText($"Program of {task.Name} already running, skipping...");
+            }
+            else if (result != "")
             {
                 tpf.SetInfoText($"Error starting {task.Name}, skipping...");
                 await Task.Run(() => { Thread.Sleep(2000); });

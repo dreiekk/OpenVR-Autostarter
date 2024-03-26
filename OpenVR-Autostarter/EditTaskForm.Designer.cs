@@ -29,336 +29,348 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTaskForm));
-            this.radioButtonStart_Start = new System.Windows.Forms.RadioButton();
-            this.textBoxProgramPath = new System.Windows.Forms.TextBox();
-            this.buttonChooseProgram = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.radioButtonStart_Nothing = new System.Windows.Forms.RadioButton();
-            this.radioButtonStart_Stop = new System.Windows.Forms.RadioButton();
-            this.radioButtonStop_Stop = new System.Windows.Forms.RadioButton();
-            this.radioButtonStop_Nothing = new System.Windows.Forms.RadioButton();
-            this.radioButtonStop_Start = new System.Windows.Forms.RadioButton();
-            this.groupBoxStart = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.checkBoxForceClose = new System.Windows.Forms.CheckBox();
-            this.checkBoxCloseByProcessName = new System.Windows.Forms.CheckBox();
-            this.textBoxProcessName = new System.Windows.Forms.TextBox();
-            this.textBoxStartArguments = new System.Windows.Forms.TextBox();
-            this.buttonChooseProcessName = new System.Windows.Forms.Button();
-            this.groupBoxOptions = new System.Windows.Forms.GroupBox();
-            this.checkBoxStartMinimized = new System.Windows.Forms.CheckBox();
-            this.labelStartArguments = new System.Windows.Forms.Label();
-            this.labelUUID = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBoxEnabled = new System.Windows.Forms.CheckBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.groupBoxStart.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBoxOptions.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.SuspendLayout();
+            radioButtonStart_Start = new RadioButton();
+            textBoxProgramPath = new TextBox();
+            buttonChooseProgram = new Button();
+            buttonSave = new Button();
+            buttonCancel = new Button();
+            radioButtonStart_Nothing = new RadioButton();
+            radioButtonStart_Stop = new RadioButton();
+            radioButtonStop_Stop = new RadioButton();
+            radioButtonStop_Nothing = new RadioButton();
+            radioButtonStop_Start = new RadioButton();
+            groupBoxStart = new GroupBox();
+            groupBox1 = new GroupBox();
+            openFileDialog = new OpenFileDialog();
+            checkBoxForceClose = new CheckBox();
+            checkBoxCloseByProcessName = new CheckBox();
+            textBoxProcessName = new TextBox();
+            textBoxStartArguments = new TextBox();
+            buttonChooseProcessName = new Button();
+            groupBoxOptions = new GroupBox();
+            checkBoxPreventAlreadyRunning = new CheckBox();
+            checkBoxStartMinimized = new CheckBox();
+            labelStartArguments = new Label();
+            labelUUID = new Label();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            checkBoxEnabled = new CheckBox();
+            textBoxName = new TextBox();
+            groupBoxStart.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBoxOptions.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
             // 
             // radioButtonStart_Start
             // 
-            this.radioButtonStart_Start.AutoSize = true;
-            this.radioButtonStart_Start.Checked = true;
-            this.radioButtonStart_Start.Location = new System.Drawing.Point(7, 22);
-            this.radioButtonStart_Start.Name = "radioButtonStart_Start";
-            this.radioButtonStart_Start.Size = new System.Drawing.Size(97, 19);
-            this.radioButtonStart_Start.TabIndex = 4;
-            this.radioButtonStart_Start.TabStop = true;
-            this.radioButtonStart_Start.Text = "start program";
-            this.radioButtonStart_Start.UseVisualStyleBackColor = true;
+            radioButtonStart_Start.AutoSize = true;
+            radioButtonStart_Start.Checked = true;
+            radioButtonStart_Start.Location = new Point(7, 22);
+            radioButtonStart_Start.Name = "radioButtonStart_Start";
+            radioButtonStart_Start.Size = new Size(97, 19);
+            radioButtonStart_Start.TabIndex = 4;
+            radioButtonStart_Start.TabStop = true;
+            radioButtonStart_Start.Text = "start program";
+            radioButtonStart_Start.UseVisualStyleBackColor = true;
             // 
             // textBoxProgramPath
             // 
-            this.textBoxProgramPath.Location = new System.Drawing.Point(6, 22);
-            this.textBoxProgramPath.Name = "textBoxProgramPath";
-            this.textBoxProgramPath.Size = new System.Drawing.Size(353, 23);
-            this.textBoxProgramPath.TabIndex = 6;
+            textBoxProgramPath.Location = new Point(6, 22);
+            textBoxProgramPath.Name = "textBoxProgramPath";
+            textBoxProgramPath.Size = new Size(353, 23);
+            textBoxProgramPath.TabIndex = 6;
             // 
             // buttonChooseProgram
             // 
-            this.buttonChooseProgram.Location = new System.Drawing.Point(365, 22);
-            this.buttonChooseProgram.Name = "buttonChooseProgram";
-            this.buttonChooseProgram.Size = new System.Drawing.Size(113, 23);
-            this.buttonChooseProgram.TabIndex = 7;
-            this.buttonChooseProgram.Text = "choose file";
-            this.buttonChooseProgram.UseVisualStyleBackColor = true;
-            this.buttonChooseProgram.Click += new System.EventHandler(this.ButtonChooseProgram_Click);
+            buttonChooseProgram.Location = new Point(365, 22);
+            buttonChooseProgram.Name = "buttonChooseProgram";
+            buttonChooseProgram.Size = new Size(113, 23);
+            buttonChooseProgram.TabIndex = 7;
+            buttonChooseProgram.Text = "choose file";
+            buttonChooseProgram.UseVisualStyleBackColor = true;
+            buttonChooseProgram.Click += ButtonChooseProgram_Click;
             // 
             // buttonSave
             // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonSave.Location = new System.Drawing.Point(340, 461);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 10;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonSave.DialogResult = DialogResult.OK;
+            buttonSave.Location = new Point(340, 487);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(75, 23);
+            buttonSave.TabIndex = 10;
+            buttonSave.Text = "Save";
+            buttonSave.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.Location = new System.Drawing.Point(421, 461);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 11;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Location = new Point(421, 487);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(75, 23);
+            buttonCancel.TabIndex = 11;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += ButtonCancel_Click;
             // 
             // radioButtonStart_Nothing
             // 
-            this.radioButtonStart_Nothing.AutoSize = true;
-            this.radioButtonStart_Nothing.Location = new System.Drawing.Point(7, 72);
-            this.radioButtonStart_Nothing.Name = "radioButtonStart_Nothing";
-            this.radioButtonStart_Nothing.Size = new System.Drawing.Size(84, 19);
-            this.radioButtonStart_Nothing.TabIndex = 14;
-            this.radioButtonStart_Nothing.TabStop = true;
-            this.radioButtonStart_Nothing.Text = "do nothing";
-            this.radioButtonStart_Nothing.UseVisualStyleBackColor = true;
+            radioButtonStart_Nothing.AutoSize = true;
+            radioButtonStart_Nothing.Location = new Point(7, 72);
+            radioButtonStart_Nothing.Name = "radioButtonStart_Nothing";
+            radioButtonStart_Nothing.Size = new Size(84, 19);
+            radioButtonStart_Nothing.TabIndex = 14;
+            radioButtonStart_Nothing.TabStop = true;
+            radioButtonStart_Nothing.Text = "do nothing";
+            radioButtonStart_Nothing.UseVisualStyleBackColor = true;
             // 
             // radioButtonStart_Stop
             // 
-            this.radioButtonStart_Stop.AutoSize = true;
-            this.radioButtonStart_Stop.Location = new System.Drawing.Point(6, 47);
-            this.radioButtonStart_Stop.Name = "radioButtonStart_Stop";
-            this.radioButtonStart_Stop.Size = new System.Drawing.Size(101, 19);
-            this.radioButtonStart_Stop.TabIndex = 18;
-            this.radioButtonStart_Stop.TabStop = true;
-            this.radioButtonStart_Stop.Text = "close program";
-            this.radioButtonStart_Stop.UseVisualStyleBackColor = true;
+            radioButtonStart_Stop.AutoSize = true;
+            radioButtonStart_Stop.Location = new Point(6, 47);
+            radioButtonStart_Stop.Name = "radioButtonStart_Stop";
+            radioButtonStart_Stop.Size = new Size(101, 19);
+            radioButtonStart_Stop.TabIndex = 18;
+            radioButtonStart_Stop.TabStop = true;
+            radioButtonStart_Stop.Text = "close program";
+            radioButtonStart_Stop.UseVisualStyleBackColor = true;
             // 
             // radioButtonStop_Stop
             // 
-            this.radioButtonStop_Stop.AutoSize = true;
-            this.radioButtonStop_Stop.Checked = true;
-            this.radioButtonStop_Stop.Location = new System.Drawing.Point(6, 47);
-            this.radioButtonStop_Stop.Name = "radioButtonStop_Stop";
-            this.radioButtonStop_Stop.Size = new System.Drawing.Size(101, 19);
-            this.radioButtonStop_Stop.TabIndex = 22;
-            this.radioButtonStop_Stop.TabStop = true;
-            this.radioButtonStop_Stop.Text = "close program";
-            this.radioButtonStop_Stop.UseVisualStyleBackColor = true;
+            radioButtonStop_Stop.AutoSize = true;
+            radioButtonStop_Stop.Checked = true;
+            radioButtonStop_Stop.Location = new Point(6, 47);
+            radioButtonStop_Stop.Name = "radioButtonStop_Stop";
+            radioButtonStop_Stop.Size = new Size(101, 19);
+            radioButtonStop_Stop.TabIndex = 22;
+            radioButtonStop_Stop.TabStop = true;
+            radioButtonStop_Stop.Text = "close program";
+            radioButtonStop_Stop.UseVisualStyleBackColor = true;
             // 
             // radioButtonStop_Nothing
             // 
-            this.radioButtonStop_Nothing.AutoSize = true;
-            this.radioButtonStop_Nothing.Location = new System.Drawing.Point(6, 72);
-            this.radioButtonStop_Nothing.Name = "radioButtonStop_Nothing";
-            this.radioButtonStop_Nothing.Size = new System.Drawing.Size(84, 19);
-            this.radioButtonStop_Nothing.TabIndex = 21;
-            this.radioButtonStop_Nothing.TabStop = true;
-            this.radioButtonStop_Nothing.Text = "do nothing";
-            this.radioButtonStop_Nothing.UseVisualStyleBackColor = true;
+            radioButtonStop_Nothing.AutoSize = true;
+            radioButtonStop_Nothing.Location = new Point(6, 72);
+            radioButtonStop_Nothing.Name = "radioButtonStop_Nothing";
+            radioButtonStop_Nothing.Size = new Size(84, 19);
+            radioButtonStop_Nothing.TabIndex = 21;
+            radioButtonStop_Nothing.TabStop = true;
+            radioButtonStop_Nothing.Text = "do nothing";
+            radioButtonStop_Nothing.UseVisualStyleBackColor = true;
             // 
             // radioButtonStop_Start
             // 
-            this.radioButtonStop_Start.AutoSize = true;
-            this.radioButtonStop_Start.Location = new System.Drawing.Point(6, 22);
-            this.radioButtonStop_Start.Name = "radioButtonStop_Start";
-            this.radioButtonStop_Start.Size = new System.Drawing.Size(97, 19);
-            this.radioButtonStop_Start.TabIndex = 19;
-            this.radioButtonStop_Start.TabStop = true;
-            this.radioButtonStop_Start.Text = "start program";
-            this.radioButtonStop_Start.UseVisualStyleBackColor = true;
+            radioButtonStop_Start.AutoSize = true;
+            radioButtonStop_Start.Location = new Point(6, 22);
+            radioButtonStop_Start.Name = "radioButtonStop_Start";
+            radioButtonStop_Start.Size = new Size(97, 19);
+            radioButtonStop_Start.TabIndex = 19;
+            radioButtonStop_Start.TabStop = true;
+            radioButtonStop_Start.Text = "start program";
+            radioButtonStop_Start.UseVisualStyleBackColor = true;
             // 
             // groupBoxStart
             // 
-            this.groupBoxStart.Controls.Add(this.radioButtonStart_Nothing);
-            this.groupBoxStart.Controls.Add(this.radioButtonStart_Start);
-            this.groupBoxStart.Controls.Add(this.radioButtonStart_Stop);
-            this.groupBoxStart.Location = new System.Drawing.Point(12, 75);
-            this.groupBoxStart.Name = "groupBoxStart";
-            this.groupBoxStart.Size = new System.Drawing.Size(245, 100);
-            this.groupBoxStart.TabIndex = 29;
-            this.groupBoxStart.TabStop = false;
-            this.groupBoxStart.Text = "when VR runtime starts...";
+            groupBoxStart.Controls.Add(radioButtonStart_Nothing);
+            groupBoxStart.Controls.Add(radioButtonStart_Start);
+            groupBoxStart.Controls.Add(radioButtonStart_Stop);
+            groupBoxStart.Location = new Point(12, 75);
+            groupBoxStart.Name = "groupBoxStart";
+            groupBoxStart.Size = new Size(245, 100);
+            groupBoxStart.TabIndex = 29;
+            groupBoxStart.TabStop = false;
+            groupBoxStart.Text = "when VR runtime starts...";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButtonStop_Start);
-            this.groupBox1.Controls.Add(this.radioButtonStop_Nothing);
-            this.groupBox1.Controls.Add(this.radioButtonStop_Stop);
-            this.groupBox1.Location = new System.Drawing.Point(263, 75);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 100);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "when VR runtime stops...";
+            groupBox1.Controls.Add(radioButtonStop_Start);
+            groupBox1.Controls.Add(radioButtonStop_Nothing);
+            groupBox1.Controls.Add(radioButtonStop_Stop);
+            groupBox1.Location = new Point(263, 75);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(233, 100);
+            groupBox1.TabIndex = 30;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "when VR runtime stops...";
             // 
             // checkBoxForceClose
             // 
-            this.checkBoxForceClose.AutoSize = true;
-            this.checkBoxForceClose.Location = new System.Drawing.Point(13, 159);
-            this.checkBoxForceClose.Name = "checkBoxForceClose";
-            this.checkBoxForceClose.Size = new System.Drawing.Size(270, 19);
-            this.checkBoxForceClose.TabIndex = 28;
-            this.checkBoxForceClose.Text = "kill process instead of soft-closing its windows";
-            this.checkBoxForceClose.UseVisualStyleBackColor = true;
+            checkBoxForceClose.AutoSize = true;
+            checkBoxForceClose.Location = new Point(13, 159);
+            checkBoxForceClose.Name = "checkBoxForceClose";
+            checkBoxForceClose.Size = new Size(270, 19);
+            checkBoxForceClose.TabIndex = 28;
+            checkBoxForceClose.Text = "kill process instead of soft-closing its windows";
+            checkBoxForceClose.UseVisualStyleBackColor = true;
             // 
             // checkBoxCloseByProcessName
             // 
-            this.checkBoxCloseByProcessName.AutoSize = true;
-            this.checkBoxCloseByProcessName.Location = new System.Drawing.Point(14, 92);
-            this.checkBoxCloseByProcessName.Name = "checkBoxCloseByProcessName";
-            this.checkBoxCloseByProcessName.Size = new System.Drawing.Size(407, 19);
-            this.checkBoxCloseByProcessName.TabIndex = 25;
-            this.checkBoxCloseByProcessName.Text = "close program by ProcessName instead of Process Path (recommended)";
-            this.checkBoxCloseByProcessName.UseVisualStyleBackColor = true;
-            this.checkBoxCloseByProcessName.CheckedChanged += new System.EventHandler(this.CheckBoxCloseByProcessName_CheckedChanged);
+            checkBoxCloseByProcessName.AutoSize = true;
+            checkBoxCloseByProcessName.Location = new Point(14, 92);
+            checkBoxCloseByProcessName.Name = "checkBoxCloseByProcessName";
+            checkBoxCloseByProcessName.Size = new Size(407, 19);
+            checkBoxCloseByProcessName.TabIndex = 25;
+            checkBoxCloseByProcessName.Text = "close program by ProcessName instead of Process Path (recommended)";
+            checkBoxCloseByProcessName.UseVisualStyleBackColor = true;
+            checkBoxCloseByProcessName.CheckedChanged += CheckBoxCloseByProcessName_CheckedChanged;
             // 
             // textBoxProcessName
             // 
-            this.textBoxProcessName.Enabled = false;
-            this.textBoxProcessName.Location = new System.Drawing.Point(13, 117);
-            this.textBoxProcessName.Name = "textBoxProcessName";
-            this.textBoxProcessName.Size = new System.Drawing.Size(346, 23);
-            this.textBoxProcessName.TabIndex = 23;
+            textBoxProcessName.Enabled = false;
+            textBoxProcessName.Location = new Point(13, 117);
+            textBoxProcessName.Name = "textBoxProcessName";
+            textBoxProcessName.Size = new Size(346, 23);
+            textBoxProcessName.TabIndex = 23;
             // 
             // textBoxStartArguments
             // 
-            this.textBoxStartArguments.Location = new System.Drawing.Point(13, 57);
-            this.textBoxStartArguments.Name = "textBoxStartArguments";
-            this.textBoxStartArguments.Size = new System.Drawing.Size(465, 23);
-            this.textBoxStartArguments.TabIndex = 8;
+            textBoxStartArguments.Location = new Point(13, 57);
+            textBoxStartArguments.Name = "textBoxStartArguments";
+            textBoxStartArguments.Size = new Size(465, 23);
+            textBoxStartArguments.TabIndex = 8;
             // 
             // buttonChooseProcessName
             // 
-            this.buttonChooseProcessName.Enabled = false;
-            this.buttonChooseProcessName.Location = new System.Drawing.Point(365, 117);
-            this.buttonChooseProcessName.Name = "buttonChooseProcessName";
-            this.buttonChooseProcessName.Size = new System.Drawing.Size(113, 23);
-            this.buttonChooseProcessName.TabIndex = 26;
-            this.buttonChooseProcessName.Text = "choose process";
-            this.buttonChooseProcessName.UseVisualStyleBackColor = true;
-            this.buttonChooseProcessName.Click += new System.EventHandler(this.ButtonChooseProcessName_Click);
+            buttonChooseProcessName.Enabled = false;
+            buttonChooseProcessName.Location = new Point(365, 117);
+            buttonChooseProcessName.Name = "buttonChooseProcessName";
+            buttonChooseProcessName.Size = new Size(113, 23);
+            buttonChooseProcessName.TabIndex = 26;
+            buttonChooseProcessName.Text = "choose process";
+            buttonChooseProcessName.UseVisualStyleBackColor = true;
+            buttonChooseProcessName.Click += ButtonChooseProcessName_Click;
             // 
             // groupBoxOptions
             // 
-            this.groupBoxOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.groupBoxOptions.Controls.Add(this.checkBoxStartMinimized);
-            this.groupBoxOptions.Controls.Add(this.labelStartArguments);
-            this.groupBoxOptions.Controls.Add(this.textBoxStartArguments);
-            this.groupBoxOptions.Controls.Add(this.textBoxProcessName);
-            this.groupBoxOptions.Controls.Add(this.checkBoxCloseByProcessName);
-            this.groupBoxOptions.Controls.Add(this.checkBoxForceClose);
-            this.groupBoxOptions.Controls.Add(this.buttonChooseProcessName);
-            this.groupBoxOptions.Location = new System.Drawing.Point(12, 244);
-            this.groupBoxOptions.Name = "groupBoxOptions";
-            this.groupBoxOptions.Size = new System.Drawing.Size(484, 211);
-            this.groupBoxOptions.TabIndex = 32;
-            this.groupBoxOptions.TabStop = false;
-            this.groupBoxOptions.Text = "Options";
+            groupBoxOptions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            groupBoxOptions.Controls.Add(checkBoxPreventAlreadyRunning);
+            groupBoxOptions.Controls.Add(checkBoxStartMinimized);
+            groupBoxOptions.Controls.Add(labelStartArguments);
+            groupBoxOptions.Controls.Add(textBoxStartArguments);
+            groupBoxOptions.Controls.Add(textBoxProcessName);
+            groupBoxOptions.Controls.Add(checkBoxCloseByProcessName);
+            groupBoxOptions.Controls.Add(checkBoxForceClose);
+            groupBoxOptions.Controls.Add(buttonChooseProcessName);
+            groupBoxOptions.Location = new Point(12, 244);
+            groupBoxOptions.Name = "groupBoxOptions";
+            groupBoxOptions.Size = new Size(484, 237);
+            groupBoxOptions.TabIndex = 32;
+            groupBoxOptions.TabStop = false;
+            groupBoxOptions.Text = "Options";
+            // 
+            // checkBoxPreventAlreadyRunning
+            // 
+            checkBoxPreventAlreadyRunning.AutoSize = true;
+            checkBoxPreventAlreadyRunning.Location = new Point(13, 209);
+            checkBoxPreventAlreadyRunning.Name = "checkBoxPreventAlreadyRunning";
+            checkBoxPreventAlreadyRunning.Size = new Size(414, 19);
+            checkBoxPreventAlreadyRunning.TabIndex = 31;
+            checkBoxPreventAlreadyRunning.Text = "prevent start of program if already running (requires ProcessName above)";
+            checkBoxPreventAlreadyRunning.UseVisualStyleBackColor = true;
+            checkBoxPreventAlreadyRunning.CheckedChanged += checkBoxPreventAlreadyRunning_CheckedChanged;
             // 
             // checkBoxStartMinimized
             // 
-            this.checkBoxStartMinimized.AutoSize = true;
-            this.checkBoxStartMinimized.Location = new System.Drawing.Point(13, 184);
-            this.checkBoxStartMinimized.Name = "checkBoxStartMinimized";
-            this.checkBoxStartMinimized.Size = new System.Drawing.Size(157, 19);
-            this.checkBoxStartMinimized.TabIndex = 30;
-            this.checkBoxStartMinimized.Text = "start program minimized";
-            this.checkBoxStartMinimized.UseVisualStyleBackColor = true;
+            checkBoxStartMinimized.AutoSize = true;
+            checkBoxStartMinimized.Location = new Point(13, 184);
+            checkBoxStartMinimized.Name = "checkBoxStartMinimized";
+            checkBoxStartMinimized.Size = new Size(157, 19);
+            checkBoxStartMinimized.TabIndex = 30;
+            checkBoxStartMinimized.Text = "start program minimized";
+            checkBoxStartMinimized.UseVisualStyleBackColor = true;
             // 
             // labelStartArguments
             // 
-            this.labelStartArguments.AutoSize = true;
-            this.labelStartArguments.Location = new System.Drawing.Point(13, 35);
-            this.labelStartArguments.Name = "labelStartArguments";
-            this.labelStartArguments.Size = new System.Drawing.Size(223, 15);
-            this.labelStartArguments.TabIndex = 29;
-            this.labelStartArguments.Text = "(optional) start program with arguments:";
+            labelStartArguments.AutoSize = true;
+            labelStartArguments.Location = new Point(13, 35);
+            labelStartArguments.Name = "labelStartArguments";
+            labelStartArguments.Size = new Size(223, 15);
+            labelStartArguments.TabIndex = 29;
+            labelStartArguments.Text = "(optional) start program with arguments:";
             // 
             // labelUUID
             // 
-            this.labelUUID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelUUID.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelUUID.Location = new System.Drawing.Point(12, 461);
-            this.labelUUID.Name = "labelUUID";
-            this.labelUUID.Size = new System.Drawing.Size(322, 23);
-            this.labelUUID.TabIndex = 33;
-            this.labelUUID.Text = "UUID: New Task";
-            this.labelUUID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelUUID.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            labelUUID.ForeColor = SystemColors.ControlDark;
+            labelUUID.Location = new Point(12, 487);
+            labelUUID.Name = "labelUUID";
+            labelUUID.Size = new Size(322, 23);
+            labelUUID.TabIndex = 33;
+            labelUUID.Text = "UUID: New Task";
+            labelUUID.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBoxProgramPath);
-            this.groupBox2.Controls.Add(this.buttonChooseProgram);
-            this.groupBox2.Location = new System.Drawing.Point(12, 181);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(484, 57);
-            this.groupBox2.TabIndex = 34;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Program Path / URI";
+            groupBox2.Controls.Add(textBoxProgramPath);
+            groupBox2.Controls.Add(buttonChooseProgram);
+            groupBox2.Location = new Point(12, 181);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(484, 57);
+            groupBox2.TabIndex = 34;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Program Path / URI";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBoxEnabled);
-            this.groupBox3.Controls.Add(this.textBoxName);
-            this.groupBox3.Location = new System.Drawing.Point(12, 12);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(484, 57);
-            this.groupBox3.TabIndex = 35;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Task Name";
+            groupBox3.Controls.Add(checkBoxEnabled);
+            groupBox3.Controls.Add(textBoxName);
+            groupBox3.Location = new Point(12, 12);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(484, 57);
+            groupBox3.TabIndex = 35;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Task Name";
             // 
             // checkBoxEnabled
             // 
-            this.checkBoxEnabled.AutoSize = true;
-            this.checkBoxEnabled.Checked = true;
-            this.checkBoxEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxEnabled.Location = new System.Drawing.Point(399, 24);
-            this.checkBoxEnabled.Name = "checkBoxEnabled";
-            this.checkBoxEnabled.Size = new System.Drawing.Size(68, 19);
-            this.checkBoxEnabled.TabIndex = 36;
-            this.checkBoxEnabled.Text = "Enabled";
-            this.checkBoxEnabled.UseVisualStyleBackColor = true;
+            checkBoxEnabled.AutoSize = true;
+            checkBoxEnabled.Checked = true;
+            checkBoxEnabled.CheckState = CheckState.Checked;
+            checkBoxEnabled.Location = new Point(399, 24);
+            checkBoxEnabled.Name = "checkBoxEnabled";
+            checkBoxEnabled.Size = new Size(68, 19);
+            checkBoxEnabled.TabIndex = 36;
+            checkBoxEnabled.Text = "Enabled";
+            checkBoxEnabled.UseVisualStyleBackColor = true;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(6, 22);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(371, 23);
-            this.textBoxName.TabIndex = 6;
+            textBoxName.Location = new Point(6, 22);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(371, 23);
+            textBoxName.TabIndex = 6;
             // 
             // EditTaskForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 492);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.labelUUID);
-            this.Controls.Add(this.groupBoxOptions);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBoxStart);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonSave);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EditTaskForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edit Task";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditTaskForm_FormClosing);
-            this.groupBoxStart.ResumeLayout(false);
-            this.groupBoxStart.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBoxOptions.ResumeLayout(false);
-            this.groupBoxOptions.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(508, 518);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(labelUUID);
+            Controls.Add(groupBoxOptions);
+            Controls.Add(groupBox1);
+            Controls.Add(groupBoxStart);
+            Controls.Add(buttonCancel);
+            Controls.Add(buttonSave);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "EditTaskForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Edit Task";
+            FormClosing += EditTaskForm_FormClosing;
+            groupBoxStart.ResumeLayout(false);
+            groupBoxStart.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBoxOptions.ResumeLayout(false);
+            groupBoxOptions.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -388,5 +400,6 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.CheckBox checkBoxEnabled;
         private CheckBox checkBoxStartMinimized;
+        private CheckBox checkBoxPreventAlreadyRunning;
     }
 }
