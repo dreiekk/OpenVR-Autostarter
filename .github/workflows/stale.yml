@@ -25,3 +25,4 @@ jobs:
         stale-pr-message: 'This PR has been marked as stale due to inactivity'
         stale-issue-label: 'Stale'
         stale-pr-label: 'Stale'
+        exempt-issue-labels: 'bug,no-stale'
